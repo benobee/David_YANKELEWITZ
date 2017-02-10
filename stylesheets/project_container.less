@@ -1,0 +1,120 @@
+.project-container{
+  .nav{
+    display:flex;
+    padding:1em;
+    background-color:white;
+    box-shadow: 0px 2px 7px #dbdbdb; 
+    align-items:center;
+    .page-title{
+      width:50%;
+      text-align:left;
+      h2{
+        @media screen and (max-width:1024px){
+          font-size:1em !important;
+        }
+        font-size:2vw;
+        line-height: 1em;
+        margin:0;
+      }
+    }
+    .controls{
+      width:50%;
+      .ui{
+        display:flex;
+        justify-content:flex-end;
+        font-size:1.5em;
+        line-height: 1em;
+        align-items:center;
+        .item{
+          padding-left:15px;
+          padding-right:15px;
+          width:20px;
+          border-left:2px solid #afafaf;
+          cursor: pointer;
+          &.up[data-index="1"]{
+            pointer-events: none !important;
+            i {
+              color:#c9c9c9 !important;
+            }
+          }
+          &:nth-child(1){
+            border-left:none !important;
+          }
+          i{
+            color:black;
+            font-size:0.8em;
+          }
+          &.close{
+            color:black;
+            font-size:1.2em;
+          }
+        }
+      }
+    }
+  }
+  .project-content{
+      padding:1em;
+      display: flex;
+      @media screen and (max-width:1024px){
+        flex-direction:column;
+        .summary{
+          width:100% !important;
+          margin-right:0 !important;
+        }
+        .carousel-wrapper{
+          width:100% !important;
+          height:65vh !important;
+          max-height:436px !important;
+           .image-wrapper img{
+              height:61vw !important;
+              max-height:436px !important;
+           }
+        }
+      }
+      .summary{
+        width:20%;
+        margin-right: 1%;
+        margin-bottom:1em;
+        .sqs-layout{
+          padding:1em !important;
+        }
+        p{
+          line-height: 1.4em;
+          font-size:0.9em;
+        }
+      }
+      .carousel-wrapper{
+        width:79%;
+        .image-wrapper img{
+          height:73.5vh;
+          width:auto;
+          max-width:100% !important;
+        }
+        .last-slide{
+          display:flex;
+          align-items:center;
+          height:70.5vh;
+          background-color:#dddddd;
+          width:300px;
+          justify-content:center;
+          cursor: pointer;
+          transition:background-color 0.3s;
+          &:hover{
+            background-color:#c9c9c9;
+          }
+          .action{
+            display:flex;
+            align-items:center;
+            flex-direction:column;
+            color:black;
+            font-weight: 600;
+            i {
+              margin-top:1em;
+              color:black;
+              font-size:1.32em;
+            }
+          }
+        }
+      }
+  }
+}
