@@ -29,7 +29,37 @@ const controller = {
 				TweenMax.to(module, 0.6, {opacity: 1, visibility: 'visible', delay: 0.35 });
 				TweenMax.set(module, {height: '100%', onComplete: () => {
 
-					this.initCarousel(module);
+					const owl = $(module).find('.owl-carousel');
+
+					$(owl).owlCarousel({
+						items: 1,
+						autoplay: false,
+						loop: false,
+						margin:30,
+						mouseDrag: true,
+						nav: false,
+						dots: false,
+						stagePadding: 0,
+						autoWidth: true,
+						lazyLoad: true,
+						rewind: true,
+						onInitialized(){
+							//go to the next image in the carousel
+							$('.next.item').on("click", (e) => {
+			                   	e.stopPropagation();
+			                   	owl.trigger('next.owl.carousel', [500]); 
+							});
+							owl.on('changed.owl.carousel', (event) => {
+								const items = event.item.count;
+			    				const item = event.item.index + 1;
+			    				if (items === item) {
+			    					$('.next.item i').attr('class', 'fa fa-arrow-left');
+			    				} else {
+			    					$('.next.item i').attr('class', 'fa fa-arrow-right');
+			    				}
+							});				        	
+						}
+					});
 
 				}});
 			}});
@@ -37,49 +67,28 @@ const controller = {
 	},
 	projectPage() {
 		const page = $('.collection-type-david_projects.view-item');
-		console.log(page.length);
-		if (page.length !== 0) {
-			this.initCarousel();
-		}
-	},
-	initCarousel(target) {
-		let owl = {};
 
-		if (target.length === 1) {
-			owl = $(target).find('.owl-carousel');				
-		} else {
-			owl = $('.owl-carousel');
+		if (page.length) {
+			const owl = $('.owl-carousel');
+
+			$(owl).owlCarousel({
+				items: 3,
+				autoplay: false,
+				loop: false,
+				margin:30,
+				mouseDrag: true,
+				nav: true,
+				dots: false,
+				stagePadding: 0,
+				autoWidth: false,
+				lazyLoad: false,
+				rewind: true,
+				onInitialized(){
+				        	
+				}
+			});				
 		}
 
-		$(owl).owlCarousel({
-			items: 1,
-			autoplay: false,
-			loop: false,
-			margin:30,
-			mouseDrag: true,
-			nav: false,
-			dots: false,
-			stagePadding: 0,
-			autoWidth: true,
-			lazyLoad: true,
-			rewind: true,
-			onInitialized(){
-				//go to the next image in the carousel
-				$('.next.item').on("click", (e) => {
-                   	e.stopPropagation();
-                   	owl.trigger('next.owl.carousel', [500]); 
-				});
-				owl.on('changed.owl.carousel', (event) => {
-					const items = event.item.count;
-    				const item = event.item.index + 1;
-    				if (items === item) {
-    					$('.next.item i').attr('class', 'fa fa-arrow-left');
-    				} else {
-    					$('.next.item i').attr('class', 'fa fa-arrow-right');
-    				}
-				});				        	
-			}
-		});		
 	},
 	toggleActiveStyles(parent) {
 
