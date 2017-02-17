@@ -14,11 +14,15 @@
     display:-webkit-flex;
     flex-direction:column;
     -webkit-flex-direction:column;
+    .project-item:last-child{
+        border-bottom: 2vh solid #00111c;
+    }
     .project-item{
       position: relative;
       background-color:rgba(10,10,10,1);
       width:100%;
       overflow: hidden;
+      border-top: 2vh solid #00111c;
       &.active-slide{
         .title{
           opacity:0;
@@ -32,7 +36,7 @@
       }
       .content{
         position:relative;
-        height:37vh;
+        height:60vh;
         overflow:hidden;
         cursor:pointer;
         .title{
@@ -48,10 +52,13 @@
           width:100%;
           transition:opacity 0.2s;
           h2{
+            @media screen and (max-width:1024px) {
+              font-size:2em !important;
+            }
             padding:0.3em;
             margin:0;
             color:white;
-            font-size:4em;
+            font-size:5vw;
           }
         }
         .image-wrapper{
