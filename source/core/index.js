@@ -1,5 +1,7 @@
-import controller from './controller.js';
+import controller from './controller';
+import util from './util';
 
 export {
-	controller
+	controller,
+	util
 }

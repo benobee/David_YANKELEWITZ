@@ -1,97 +1,84 @@
-.collection-type-david_projects{
-	&.view-item{
-		@media screen and (max-width:750px) {
-			.logo{
-				line-height: 0.5em !important;	
-			}
-			#logo{
-				margin:50px !important;
-			}
-		}
-		#header{
-			position: static;
-			background-color:#001F3A;
-			margin-top:0 !important;
-		}
-		.page-banner-wrapper{
-			display:none;
-		}
-		#page{
-			border-top:0;
-		}
-	}
-	#header{
-		@media screen and (max-width:750px) {
-			margin-top:80px;
-			.logo{
-				line-height: 0.5em !important;	
-			}
-			#logo{
-				max-width: 80%;
-				padding:0 !important;
-				margin:0 auto;
-				a{
-					font-size:0.5em !important;
-				}
-				.logo-subtitle{
-					font-size:0.8em !important;
-
-				}
-			}
-			.page-banner-wrapper{
-				margin-top:80px !important;
-			}
-		}
-		position: absolute;
-		top:0px;
-		width:100%;
-		left:0;
-		right:0;
-		padding:0 !important;
-		z-index:3;
-		#logo, #topNav{
-			padding:40px;
-		}
-		a, .logo-subtitle{
-			color:white;
-		}
-		#topNav{
-			li{
-				a{
-					padding-top:0;
-				}
-			}
-			a:hover{
-				color:#2E96CF;
-			}			
-		}
-	}
-	#page{
-		padding-top:0;
-	}
+.collection-type-david_projects {
+    &.view-item {
+        @media screen and (max-width:750px) {
+            .logo {
+                line-height: 0.5em !important;
+            }
+            #logo {
+                margin: 50px !important;
+            }
+        }
+        #header {
+            position: static;
+            margin-top: 0 !important;
+        }
+        .page-banner-wrapper {
+            display: none;
+        }
+        #page {
+            border-top: 0;
+        }
+    }
+    #header {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 0 !important;
+        z-index: 3;
+        @media screen and (max-width:750px) {
+            margin-top: 80px;
+            .logo {
+                line-height: 0.5em !important;
+            }
+            #logo {
+                padding: 0 !important;
+                margin-top: 1em;
+                a {
+                    font-size: 0.5em !important;
+                }
+                .logo-subtitle {
+                    font-size: 0.8em !important;
+                }
+            }
+            .page-banner-wrapper {
+                margin-top: 80px !important;
+            }
+        }
+        #logo, #topNav {
+            padding: 40px;
+        }
+        #logo{
+            h1{
+                margin-left: -5px;
+            }
+        }
+        #topNav {
+            li {
+                a {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    #page {
+        padding-top: 0;
+    }
 }
-
-.page-banner-wrapper{
-	height:100%;
-	overflow:hidden !important;
-	position: relative;
-	.page-banner-image-container{
-		height:100%;
-		width:100%;
-		.image{
-			background-size:cover;
-			height:75vh;
-			width:100%;
-			background-position: center center;
-			background-repeat: no-repeat;
-		}
-	}
-	.overlay{
-		background:rgba(10,10,10,0.5);
-		height:100%;
-		position: absolute;
-		top:0;
-		left:0;
-		width:100%;
-	}
+.page-banner-wrapper {
+    height: 100%;
+    overflow: hidden !important;
+    position: relative;
+    .page-banner-image-container {
+        height: 100%;
+        width: 100%;
+        .image {
+            background-size: cover;
+            height: 60vh;
+            width: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
 }

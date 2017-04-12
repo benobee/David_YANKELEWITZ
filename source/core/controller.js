@@ -1,14 +1,21 @@
 import $ from 'jquery';
 import { TweenMax, Power2, TimelineLite } from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
+import util from './util';
 
 const controller = {
 	init() {
 		this.getListData();
 		this.events();
 		this.indexArray();
-		this.navSmoothScroll();
+		this.focalPoints();
+		//this.navSmoothScroll();
 	},
+	focalPoints() {
+		const targets = $('.page-banner-image-container .image, .project-item .image').toArray();
+
+		util.focalPoints(targets);
+	},	
 	navSmoothScroll() {
 
 		/*
@@ -90,7 +97,7 @@ const controller = {
 		/*
 		 * @desc user clicks on slide to reveal projects
 		*/
-		
+
 		$('.project-item .content').on("click", (e) => {
 			const parent = $(e.currentTarget).parent();
 
@@ -137,6 +144,14 @@ const controller = {
 			TweenMax.set('.module-injection .controls .next.item', {opacity: 0, visibility: 'hidden' });
 		});
 
+		//open extra content on mobile
+		$('.project-item .read-more.button').on("click", (e) => {
+			$('.extra-content').addClass("open");
+		});
+
+		$('.project-item .extra-content').on("click", (e) => {
+			$('.extra-content').removeClass("open");
+		});
 	},
 	indexArray() {
 		this.array = $('.project-item').toArray();
