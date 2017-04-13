@@ -1,7 +1,13 @@
 .project-container {
+    padding: 0px 10px;
+    max-width: 1300px;
+    margin: 0 auto;
+    @media screen and (max-width:1024px) {
+      max-width: 800px;  
+    }
     .nav {
         display: flex;
-        padding: 0.5em 1em;
+        padding: 0.5em 0.5em;
         background-color: white;
         align-items: center;
         .page-title {
@@ -40,7 +46,8 @@
                         background-position: center center;
                         background-repeat: no-repeat;
                         filter: brightness(0);
-                        margin-right: 10px;
+                        -webkit-filter: brightness(0);
+                        margin-left: 10px;
                     }
                 }
             }
@@ -50,9 +57,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding: 0px 10px;
-        max-width: 1500px;
-        margin: 0 auto;
         opacity: 0;
         visibility: hidden;
         .read-more.button{
@@ -71,10 +75,11 @@
                 font-weight: 600;
             }
             .extra-content {
-                display: none;
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
                 &.open{
                     transition:0.3s;
-                    position: absolute;
                     top:0;
                     bottom:0;
                     left:0;
@@ -87,13 +92,23 @@
                     align-items:center;
                     -webkit-align-items:center;
                     z-index:99999999;
+                    opacity: 1;
+                    visibility: visible;
                     &:after{
-                        content:"close";
+                        content:"";
                         position: absolute;
                         top:0;
                         right:0;
-                        padding:1em;
+                        margin:0.7em;
                         cursor: pointer;
+                        background-image:url('https://david-yankelewitz.squarespace.com/assets/appbar.close.png');
+                        background-position:center center;
+                        background-size:contain;
+                        background-repeat: no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        filter: brightness(0);
+                        -webkit-filter: brightness(0);
                     }
                     div{
                         padding:0.5em;
