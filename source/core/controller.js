@@ -5,18 +5,17 @@ import util from './util';
 
 const controller = {
 	init() {
-		this.getListData();
 		this.events();
 		this.indexArray();
 		this.focalPoints();
-		//this.navSmoothScroll();
+		this.hoverEffects();
 	},
 	focalPoints() {
 		const targets = $('.page-banner-image-container .image, .project-item .image').toArray();
 
 		util.focalPoints(targets);
 	},	
-	navSmoothScroll() {
+	hoverEffects() {
 
 		/*
 		 * @desc when user clicks on any other link besides
@@ -25,9 +24,9 @@ const controller = {
 		 * but will leave for now
 		*/
 
-		$('#topNav li:not(.index-collection)').on("click", (e) => {
-			e.preventDefault();
-			TweenMax.to(window, 0.6, { scrollTo: '#footer' });
+		$('.project-item').on("mouseenter", (e) => {
+			$(".project-item").removeClass("hover");
+			$(e.currentTarget).addClass("hover");
 		});
 	},
 	animateProjectScroll(content) {
