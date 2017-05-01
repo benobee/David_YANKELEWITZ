@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'jquery-slim';
 import { TweenMax, Power2, TimelineLite } from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import util from './util';

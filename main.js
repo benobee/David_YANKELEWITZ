@@ -6,8 +6,8 @@
  *
  */
 
-import * as core from "./source/core/index.js";
-import $ from "jquery";
+import * as core from "./src/core/index.js";
+import $ from "jquery-slim";
 
 class App_Build {
     constructor() {
